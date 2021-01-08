@@ -10,7 +10,7 @@
     <h3> 
         <p> username: <%= @renter.username %> </p>
         <p> motto: <%= @renter.motto %> </p>
-        <p> if i was a train: <%= @renter.train %> </p>
+        <p> favorite subway line: <%= @renter.train %> </p>
     </h3>
 
     <h3>
@@ -23,7 +23,7 @@
     
 
     <% if @renter == @current_renter %>
-    <%= button_to "edit renter", edit_renter_path, method: :get %>
+    <%= button_to "edit my profile", edit_renter_path, method: :get %>
     <% end %>
 </div>
 
