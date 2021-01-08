@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
 
-
+  delete 'logout', to: 'renters#logout', as: 'logout'
   post '/renters/:id/edit', to: 'renters#update', as: 'update_renter'
   get '/renter_login', to: "renters#login", as: 'renter_login'
   post '/send_renter_login', to: 'renters#handle_login'
-  delete '/renters/logout', to: 'renters#logout', as: 'logout'
+  
 
   resources :reviews
   resources :leases
@@ -18,10 +18,7 @@ Rails.application.routes.draw do
   root "homepages#home", as: 'homepages'
   
   
-
   
- 
-
   
   
 

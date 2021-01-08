@@ -3,6 +3,13 @@
    
     <img src="<%= @landlord.img_url %>" alt="<%= @landlord.img_url%>">
     <h1> <%= @landlord.name %> </h1>
+    <div class="icon-bar">
+    <a href= "<%= "#{@landlord.facebook}" %>" target= _blank><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com/pauliewalnutts?lang=en" target= _blank><i class="fa fa-twitter"></i></a>
+    <a href="https://www.instagram.com/pauliethewalnuts/?hl=en" target= _blank><i class="fa fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/paulie-gualtieri-36502b1a7?challengeId=AQFe9Vi88zC1GwAAAXbhQIUcHN2DVStKzNHstxiDhAv7wsCj4m2Q25-gs-mb8wPcD3F4eIDdzshu-h5T5AC20kN_e-QAg7LrNg&submissionId=ea7fbcb2-9236-5816-8809-3f2ac585827e" target= _blank><i class="fa fa-linkedin"></i></a>
+    </div>
+    
     <h3> 
         <p>username: <%= @landlord.username %></p>
         <p>location: <%= @landlord.location %></p>
@@ -14,29 +21,44 @@
     <audio src= "<%= @landlord.song %>" controls> </audio>
 </div>
 
+
+
 <br>
 
-<div class=box_two>
-    <h5> my tenets: 
-        <% @landlord.leases.each do |lease| %>
-        <p><%= link_to lease.renter.name, renter_path(lease.renter.id)%></p>
+<div class=DivToScroll>
+    <h2> my tenants: </h2>
+    <br>
+        <div class=DivWithScroll>
+        
+        <h4>
+
+            <% @landlord.leases.each do |lease| %>
+            <p><%= link_to lease.renter.name, renter_path(lease.renter.id)%></p>
+            <p> <%= lease.location %></p>
         <% end %>
-    </h5>
+    
+    </div>
 </div>
 <br>
-<div class=DivToScroll>
+<div class=DivToScroll >
+    <h2> reviews: </h2>
+    <br>
     <div class=DivWithScroll>
-        <h5> reviews: 
+        
+        <h4>
             <% @landlord.reviews.each do |review| %>
             <p> <%= link_to review.renter.name, renter_path(review.renter.id) %> </p>
             <p> <%= review.comment %> </p>
             <p> shady-ness rating: <%= review.rating %></p>
             <% end %>
             
-        </h5>
+        </h4>
     </div>
     <br> 
     <%= button_to "leave a review", new_review_path, method: :get %>
+    <%= button_to "logout", logout_path, method: :delete %>
 </div>
+
+
 
 

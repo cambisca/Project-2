@@ -1,3 +1,71 @@
-// Place all the styles related to the Landlords controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+body::-webkit-scrollbar-track {
+    width: 0.25rem;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    width: 0.25rem;
+  }
+
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+  }
+
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem; 
+    color: var(--text-primary);
+    text-decoration: none;
+
+  }
+
+  .link-text {
+    display: none;
+    margin-left: 1rem; 
+  }
+
+  .nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+  }
+
+  main {
+    margin-left: 5rem;
+    padding: 1rem;
+  }
